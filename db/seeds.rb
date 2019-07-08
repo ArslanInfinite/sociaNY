@@ -15,7 +15,7 @@ Review.destroy_all
 
 User.create!(username: "user1")
 
-Activity.create!(title: "act1", description: "hot vinyasa yoga", location: "NY", capacity: 30, price: 40, date: 'figureout how to store dates')
+Activity.create!(title: "act1", description: "hot vinyasa yoga", location: "NY", capacity: 30, price: 40, datetime: 'figureout how to store dates')
 
 Admin.create!(username: "admin1", company: "adminco1", activity_id: Activity.find_by(title: "act1").id)
 
