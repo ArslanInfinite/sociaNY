@@ -1,2 +1,6 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<h1>My Profile</h1>
+
+
+<h2> <%= @user.username %> </h2>
+<%= @user.id %>
+<%= button_to "List of Activities", activities_path, method: :get %>

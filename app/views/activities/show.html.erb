@@ -1,2 +1,5 @@
-<h1>Activities#show</h1>
-<p>Find me in app/views/activities/show.html.erb</p>
+<h1>My Activities</h1>
+
+<h3> <%= @activity.title %> <br> </h3>
+<%= @activity.id %>
+<%= button_to "Book a Reservation", new_reservation_path, method: :get %>
