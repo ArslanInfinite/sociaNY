@@ -13,7 +13,7 @@ Activity.destroy_all
 Review.destroy_all
 
 
-User.create!(username: "user1")
+User.create!(username: "user1", password: "hi")
 
 Activity.create!(title: "act1", description: "hot vinyasa yoga", location: "NY", capacity: 30, price: 40, datetime: 'figureout how to store dates')
 
