@@ -1,13 +1,15 @@
 class ReservationsController < ApplicationController
+
   def new
     @reservation = Reservation.new
-    # find a way to pass the User_id and activity_id in when creating a new reservation
   end
 
   def create
-   # can't create a resercvation without all of the params
-    @reservation = Reservation.create!(reservation_params)
-    redirect_to reservations_path
+   params[:reservation][:user_id]= session[:user_id]
+   params[:reservation][:activity_id] = params[:reservation][:activity_id].to_i
+   @reservation = Reservation.create!(reservation_params)
+   redirect_to reservation_path(@reservation)
+    #here is where we subtract class cost from wallet amount
   end
 
   def edit
@@ -15,9 +17,9 @@ class ReservationsController < ApplicationController
   end
 
   def update
-      @reservation = Reservation.find(params[:id])
-      @reservation.update(reservation_params)
-      redirect_to reservations_path
+    @reservation = Reservation.find(params[:id])
+    @reservation.update(reservation_params)
+    redirect_to reservation_path(@reservation)
   end
 
   def index
@@ -25,7 +27,6 @@ class ReservationsController < ApplicationController
   end
 
   def show
-
     @reservation = Reservation.find(params[:id])
     @activity = Activity.find(@reservation.activity_id)
     @user = User.find(@reservation.user_id)
@@ -34,16 +35,14 @@ class ReservationsController < ApplicationController
   def destroy
     @reservation = Reservation.find(params[:id])
     @reservation.destroy
-    # flash[:notice] = "Your Reservation #{@reservation} has been canceled"
     redirect_to reservations_path
+    flash[:notice] = "Your reservation on #{@reservation.datetime} has been canceled"
   end
 
-  private
+private
 
   def reservation_params
-
     params.require(:reservation).permit(:location, :capacity, :price, :datetime, :user_id, :activity_id)
-    
   end
 
 end

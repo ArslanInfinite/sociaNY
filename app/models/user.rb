@@ -7,7 +7,5 @@ class User < ApplicationRecord
   has_many :activities, through: :reviews
 
   validates :username, presence: true
-  validates :password, presence: true
-
 
 end

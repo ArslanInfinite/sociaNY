@@ -5,5 +5,7 @@
 <%= f.text_field :username %>
 <%= f.label :password %>
 <%= f.password_field :password %>
+<%= f.label :wallet_amount, "Inital Wallet Amount" %>
+<%= f.number_field :wallet_amount %>
 <%= f.submit "Create User" %>
 <%end %>
