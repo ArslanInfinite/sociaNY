@@ -9,25 +9,33 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
-    def create
+  def create
     @user = User.create(user_params)
     session[:user_id] = @user.id
-    redirect_to activities_path
+    redirect_to mainpage_path
   end
 
   def show
     @user = User.find(params[:id])
   end
 
-  def add_funds
-    @user = User.find(@session.id)
-    @user.update(wallet_amount: params[:wallet_amount])
+  def edit
+    @user = User.find(params[:id])
+  end
 
+  def update
+    @user = User.find(params[:id])
+    @user.update(wallet_amount: user_params[:wallet_amount].to_i + @user.wallet_amount)
+    redirect_to user_path(@user)
   end
 
   def user_activities
     @user = User.find(params[:id])
     @activities = @user.activities
+  end
+
+  def welcome
+    render "/welcome"
   end
 
   private

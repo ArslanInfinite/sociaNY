@@ -1,0 +1,7 @@
+<h1>Add Funds</h1>
+
+<%= form_for @user, controller: 'users', action: 'create' do |f| %>
+<%= f.label :wallet_amount%>
+<%= f.number_field :wallet_amount %>
+<%= f.submit "Add Funds" %>
+<%end %>

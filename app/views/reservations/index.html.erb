@@ -1,3 +1,7 @@
+<h1><%if flash[:notice]%>
+<%=flash[:notice]%>
+<%end%></h1>
+
 <h1>Reservations</h1>
 <h3> Select a Reservation: </h3>
 <% @reservations.each do |reservation| %>

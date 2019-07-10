@@ -10,7 +10,7 @@
 <%= f.number_field :price %>
 <%= f.label :datetime %>
 <%= f.text_field :datetime %>
-<%= f.collection_select :user_id, User.all, :id, :username, prompt: true%>
-<%= f.collection_select :activity_id, Activity.all, :id, :title, prompt: true%>
+<%= f.hidden_field :user_id %>
+<%= f.collection_select :activity_id, Activity.all, :id, :title, prompt: true%> -->
 <%= f.submit "Confirm Reservation" %>
 <% end %>
