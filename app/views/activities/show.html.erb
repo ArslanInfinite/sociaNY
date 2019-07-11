@@ -1,4 +1,13 @@
-<h1>My Activities</h1>
+<h1> <%= @activity.title %> <br> </h1>
+<br>
+<br>
+Description: <%= @activity.description %> <br>
 
-<h3> <%= @activity.title %> <br> </h3>
-<%= @activity.id %>
+Location: <%= @activity.location %> <br>
+Capacity: <%= @activity.capacity %> <br>
+Price:    <%= @activity.price %>
+<br>
+
+<%= button_to "See Reviews", review_path(@review), method: :get%>
+
+<%= button_to "Write a Review", new_review_path, method: :get%>

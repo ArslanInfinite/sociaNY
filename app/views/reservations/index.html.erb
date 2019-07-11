@@ -6,7 +6,8 @@
 <h3> Select a Reservation: </h3>
 <% @reservations.each do |reservation| %>
 <%= link_to reservation.datetime, reservation_path(reservation)%> <br>
+<br>
+<%= button_to "Change Reservation", edit_reservation_path(reservation), class: "btn", method: :post %>
+
+<h2> #need to finsih this ^ </h2>
 <%end %>
-
-
-<!-- create a button to edit reservations  -->

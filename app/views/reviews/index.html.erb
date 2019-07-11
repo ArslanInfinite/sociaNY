@@ -1,7 +1,3 @@
-
-<h1><%=@reviews.first.activity.title%>
-
 <%@reviews.each do |review| %>
-<br/>
 <%= review.content %>
 <%end %>

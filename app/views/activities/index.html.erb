@@ -1,4 +1,30 @@
 <h1>Select an activity</h1>
-<% @activities.each do |activity| %>
-<%= link_to activity.title, activity_path(activity) %> <br>
-<%end %>
+
+<div class="ui grid">
+  <% @activities.each do |activity| %>
+  <div class="four wide column">
+    <div class="ui card">
+  <div class="image">
+    <img src="/images/avatar2/large/kristy.png">
+  </div>
+  <div class="content">
+    <a class="header"><%= link_to activity.title, activity_path(activity)%></a>
+    <div class="meta">
+      <span class="date">
+        #can add text here
+      </span>
+    </div>
+    <div class="description">
+`     #can add description here
+    </div>
+  </div>
+  <div class="extra content">
+    <a>
+      <i class="user icon"></i>
+      22 Friends
+    </a>
+  </div>
+</div>
+  </div>
+  <%end %>
+</div>

@@ -2,14 +2,27 @@ class ReservationsController < ApplicationController
 
   def new
     @reservation = Reservation.new
+
   end
 
   def create
+
    params[:reservation][:user_id]= session[:user_id]
    params[:reservation][:activity_id] = params[:reservation][:activity_id].to_i
-   @reservation = Reservation.create!(reservation_params)
+   @reservation = Reservation.new(reservation_params)
+   #activity_id to pass the attributes in here
+   
+   if @reservation.valid?
+     @reservation.save
+     @user = User.find(session[:user_id])
+
+     @user.update(wallet_amount: params[:wallet_amount].to_i - @reservation.activity.price)
+
+   else
+    @message = @reservation.errors.full_messages
+   end
    redirect_to reservation_path(@reservation)
-    #here is where we subtract class cost from wallet amount
+
   end
 
   def edit

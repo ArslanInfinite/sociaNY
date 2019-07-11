@@ -13,6 +13,7 @@ class ActivitiesController < ApplicationController
   end
 
   def show
+    @review = Review.find(params[:id])
     @activity = Activity.find(params[:id])
 
   end

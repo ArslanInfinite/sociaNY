@@ -1,20 +1,21 @@
-<h3>Create New Activity</h3>
-
-
+<h1>Create New Activity</h1>
+<br>
+<div class ="new_activity">
 <%= form_for @activity do |f|%>
 <%= f.label :title %>
-<%= f.text_field :title %>
+<%= f.text_field :title %> <br>
 <%= f.label :description %>
-<%= f.text_field :description %>
-<%= f.label :rating, "Rating (1-10)" %> <br>
-<%= f.number_field :rating %>
+<%= f.text_field :description %> <br>
+<%= f.label :rating, "Rating (1-10)" %>
+<%= f.number_field :rating %> <br>
 <%= f.label :location %>
-<%= f.text_field :location %>
-<%= f.label :capacity %> 
-<%= f.number_field :capacity %>
-<%= f.label :price, "Price: $" %>
-<%= f.number_field :price %>
+<%= f.text_field :location %> <br>
+<%= f.label :capacity %>
+<%= f.number_field :capacity %> <br>
+<%= f.label :price, "Price $" %>
+<%= f.number_field :price %> <br>
 <%= f.label :datetime %>
 <%= f.text_field :datetime %> <br>
 <%= f.submit "Create New Activity" %>
 <% end %>
+</div>
