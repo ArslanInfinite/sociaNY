@@ -1,4 +1,32 @@
-<h1>Select an activity</h1>
-<% @activities.each do |activity| %>
-<%= link_to activity.title, activity_path(activity) %> <br>
-<%end %>
+<header>
+  <h1>Select an activity</h1>
+</header>
+<h3><%if flash[:notice]%>
+<%=flash[:notice]%>
+<%end%></h3>
+<body>
+
+
+<div class="ui grid">
+  <% @activities.each do |activity| %>
+  <div class="four wide column">
+    <div class="ui card">
+  <div class="image">
+    <%imageName = activity.title.split(" ").join() + ".jpg"%>
+    <%= image_tag imageName%>
+  </div>
+  <div class="content">
+    <a class="header">
+      <%= link_to activity.title, activity_path(activity)%></a>
+    <br>
+     <%= activity.description %>
+  </div>
+
+    <%= button_to "Book Reservation", new_reservation_path, class: "btn", method: :get %>
+
+</div>
+  </div>
+  <%end %>
+</div>
+
+</body>

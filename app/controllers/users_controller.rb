@@ -31,11 +31,18 @@ class UsersController < ApplicationController
 
   def user_activities
     @user = User.find(params[:id])
-    @activities = @user.activities
+    @reservations = @user.reservations
   end
 
   def welcome
     render "/welcome"
+  end
+
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+    flash[:notice] = "Your user account has been deleted."
+    redirect_to welcome_path
   end
 
   private

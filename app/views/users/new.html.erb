@@ -1,11 +1,13 @@
-<h1>Create A User</h1>
+<header><h1>Create A User</h1> </header>
 
+<div class ="new_activity">
 <%= form_for @user, controller: 'users', action: 'create' do |f| %>
 <%= f.label :username %>
-<%= f.text_field :username %>
+<%= f.text_field :username %> <br>
 <%= f.label :password %>
-<%= f.password_field :password %>
-<%= f.label :wallet_amount, "Inital Wallet Amount" %>
-<%= f.number_field :wallet_amount %>
+<%= f.password_field :password %> <br>
+<%= f.label :wallet_amount, "Inital Wallet Amount $"%>
+<%= f.number_field :wallet_amount %> <br>
 <%= f.submit "Create User" %>
 <%end %>
+</div>

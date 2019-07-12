@@ -1,2 +1,16 @@
-<h1>Reviews#new</h1>
-<p>Find me in app/views/reviews/new.html.erb</p>
+<header><h1>Create Review</h1> </header>
+<br>
+<div class ="new_activity">
+  <body>
+<%= form_for @review do |f| %>
+<%= f.label :content %>
+<%= f.text_area :content %> <br>
+<%= f.label :rating %>
+<%= f.number_field :rating %> <br>
+<%= f.hidden_field :user_id, :value => session[:user_id] %>
+<%= f.hidden_field :activity_id, :value => @activity.id %>
+<br>
+<%= f.submit "Create Review", class: "btn"%>
+<% end %>
+</body>
+</div>

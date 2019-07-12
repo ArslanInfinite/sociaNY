@@ -15,15 +15,12 @@ Rails.application.routes.draw do
   get '/add_funds', to: 'users#add_funds', as: 'add_funds'
 
   resources :reservations
-
   resources :activities
-    #User routes
 
   resources :users
 
-
-
-
+  get '/reviews/new/:activity_id', to: 'reviews#new', as: 'new_review'
+  resources :reviews, only: [:create]
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

@@ -25,6 +25,7 @@ class SessionsController < ApplicationController
   end
 
   def mainpage
+    @user = User.find(session[:user_id])
     render "/mainpage"
   end
 
