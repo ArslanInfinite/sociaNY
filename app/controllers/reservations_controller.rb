@@ -9,18 +9,15 @@ class ReservationsController < ApplicationController
 
    params[:reservation][:user_id]= session[:user_id]
    params[:reservation][:activity_id] = params[:reservation][:activity_id].to_i
-   @reservation = Reservation.new(reservation_params)   
+   @reservation = Reservation.new(reservation_params)
    if @reservation.valid?
      @reservation.save
      @user = User.find(session[:user_id])
-
-     @user.update(wallet_amount: params[:wallet_amount].to_i - @reservation.activity.price)
-
+     @user.update(wallet_amount: @user[:wallet_amount].to_i - @reservation.activity.price)
    else
     @message = @reservation.errors.full_messages
    end
    redirect_to reservation_path(@reservation)
-
   end
 
   def edit

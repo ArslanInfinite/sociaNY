@@ -8,7 +8,8 @@
 <%= f.collection_select :activity_id, Activity.all, :id, :title, prompt: "Select Activity"%>
 <%= f.hidden_field :capacity, :value => :capacity %> <br>
 <%= f.hidden_field :price, :value =>  :price %>
-<%= f.hidden_field :datetime, :value =>  :datetime %>
+<%= f.hidden_field :datetime, :value => :datetime %>
+
 <%= f.hidden_field :user_id, :value => session[:user_id] %>
 <br>
 <br>

@@ -1,8 +1,6 @@
 class ReviewsController < ApplicationController
   def show
-
     @reviews = Review.all.select {|r| r.activity.id = params[:id]}
-
   end
 
   def index
@@ -16,7 +14,7 @@ class ReviewsController < ApplicationController
 
   def create
     Review.create(review_params)
-    # flash[:notice] = "Thanks for leaving a review!!"
+    # flash[:notice] = "Thanks for leaving a review!"
     redirect_to mainpage_path
   end
 
