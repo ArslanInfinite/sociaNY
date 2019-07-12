@@ -15,3 +15,4 @@ Rating: <%= review.rating %> & Content:<%=review.content %><br>
 </body>
 
 <%= button_to "Write a Review", new_review_path(@activity.id),class: "btn", method: :get%>
+<%= link_to "Main Page","/mainpage", class: "btn", id: "mainpagebtn"%>

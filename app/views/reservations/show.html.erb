@@ -7,3 +7,4 @@
 User Profile: <%= link_to @reservation.user_id, user_path(@user) %> <br>
 Activity Page: <%= link_to @reservation.activity_id, activity_path(@activity)%>
 <%= button_to "Cancel Reservation", reservation_path(@reservation), method: :delete %>
+<%= link_to "Main Page","/mainpage", class: "btn", id: "mainpagebtn"%>

@@ -2,5 +2,6 @@
 <body><% @reservations.each do |res| %>
   <%= res.activity.title %> <br>
   <%end %>
+  <%= link_to "Main Page","/mainpage", class: "btn", id: "mainpagebtn"%>
 
 </body>

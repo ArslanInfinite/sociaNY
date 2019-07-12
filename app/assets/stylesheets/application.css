@@ -17,3 +17,16 @@
  *:focus{
    outline: none;
  }
+
+ #mainpagebtn {
+   position: absolute;
+   top: 1em;
+   right: 1em;
+ }
+
+ .logo {
+   position: absolute;
+   top: 1em;
+   left: 1em;
+   width: 7em;
+ }
