@@ -1,8 +1,10 @@
-<h1 class="session">
+<header><h1 class="session">
 Login
 </h1>
-<br>
 
+</header>
+<br>
+<body>
 <h4><%= flash[:notice] %></h4>
 
 <!-- form will POST to '/login' -->
@@ -12,11 +14,13 @@ Login
   <p><%= text_field_tag :username %><p>
   <%= label_tag :password %>
   <p><%= password_field_tag :password %><p>
-  <%= submit_tag "Login" %><br><br>
+  <%= submit_tag "Login", class: "btn" %><br><br>
 <% end %>
 
 <p class="rainbow">
 Not a SociaNY Member?
 </p>
-<p><%= button_to "Sign-up", new_user_path, method: :get %></p>
+<p><%= button_to "Sign-up", new_user_path, class: "btn", method: :get %></p>
 </div>
+
+</body>

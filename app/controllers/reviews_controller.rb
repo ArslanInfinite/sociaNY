@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
   def show
-    
+
     @reviews = Review.all.select {|r| r.activity.id = params[:id]}
 
   end
@@ -10,13 +10,17 @@ class ReviewsController < ApplicationController
   end
 
   def new
+
+    @activity = User.find(session[:user_id]).activities.ids
+
+    # @activity = User.find(session[:user]).activities
     @review = Review.new
   end
 
   def create
-    params[:review][:user_id]= session[:user_id]
-    params[:review][:activity_id] = params[:review][:activity_id].to_i
-    @review = Review.create(review_params)
+
+
+    Review.create(review_params)
     # flash[:notice] = "Thanks for leaving a review!!"
     redirect_to mainpage_path
   end

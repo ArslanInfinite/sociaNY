@@ -1,28 +1,28 @@
 <!DOCTYPE HTML>
 
-<center>
-<body>
+<header>
+
 <style>
   h1 {
     font-family: 'Helvetica';
-    color: #000000;
+    color: #FFFFFF;
     font-size: 50px;
   }
+
+  h2{
+   color:  #FFFFFF
+  }
 </style>
-<br>
-<h1><font color=#000000>SociaNY</h1>
-<h2>  Main Page </h2>
-<div id="locator">
+<h1>SociaNY</h1>
+<h2> Main Page </h2>
+</header>
+
+<body>
+  <br>
   <%= button_to "View Activities", activities_path, class: 'btn', method: :get %>
-</div>
-
-<div id="locator">
+ <br>
   <%= button_to "My Profile", user_path(@user), class: 'btn', method: :get %>
-</div>
-
-<div id="locator2">
-
+  <br>
   <%= button_to "Logout", logout_path, class: 'btn', method: :delete %>
 </div>
 </body>
-</center>

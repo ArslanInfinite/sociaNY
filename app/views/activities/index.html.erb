@@ -1,11 +1,27 @@
-<h1>Select an activity</h1>
+<header>
+  <style>
+
+  h1 {
+    font-family: 'Helvetica';
+    color: #FFFFFF;
+    font-size: 50px;
+  }
+
+  </style>
+  <h1>Select an activity</h1>
+</header>
+<h3><%if flash[:notice]%>
+<%=flash[:notice]%>
+<%end%></h3>
+
+
 
 <div class="ui grid">
   <% @activities.each do |activity| %>
   <div class="four wide column">
     <div class="ui card">
   <div class="image">
-    <img src="/images/avatar2/large/kristy.png">
+    <img src="https://images4.alphacoders.com/832/832800.jpg">
   </div>
   <div class="content">
     <a class="header"><%= link_to activity.title, activity_path(activity)%></a>
@@ -19,10 +35,7 @@
     </div>
   </div>
   <div class="extra content">
-    <a>
-      <i class="user icon"></i>
-      22 Friends
-    </a>
+    <%= button_to "Book Reservation", new_reservation_path, method: :get %>
   </div>
 </div>
   </div>

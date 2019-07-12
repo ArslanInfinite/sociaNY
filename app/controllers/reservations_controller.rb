@@ -9,9 +9,7 @@ class ReservationsController < ApplicationController
 
    params[:reservation][:user_id]= session[:user_id]
    params[:reservation][:activity_id] = params[:reservation][:activity_id].to_i
-   @reservation = Reservation.new(reservation_params)
-   #activity_id to pass the attributes in here
-   
+   @reservation = Reservation.new(reservation_params)   
    if @reservation.valid?
      @reservation.save
      @user = User.find(session[:user_id])

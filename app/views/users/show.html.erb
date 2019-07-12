@@ -1,20 +1,19 @@
 
-<h1> <%= @user.username %>'s profile </h1>
+<header> <h1> <%= @user.username %>'s profile </h1> </header>
 #put a user pic in here
 <br>
 <div class ="new_activity">
 Wallet Amount: <%= @user.wallet_amount %>
 <br>
-<% #the new amount added here would then be added to the wallet_amount %>
-<br>
-<%= button_to "Add Funds", edit_user_path, method: :get %>
-<br>
-<%= button_to "View Activities", activities_path, method: :get %>
-<br>
-<%= button_to "Book Reservation", new_reservation_path, method: :get %>
-<br>
-<%= button_to "My Activities", user_activities_path, method: :get %>
-<br>
-<%= button_to "Logout", logout_path, method: :delete %>
+
+<%= button_to "Add Funds", edit_user_path, class: "btn", method: :get %>
+
+<%= button_to "View Activities", activities_path,class: "btn", method: :get %>
+
+<%= button_to "Book Reservation", new_reservation_path,class: "btn", method: :get %>
+
+<%= button_to "My Activities", user_activities_path,class: "btn", method: :get %>
+
+<%= button_to "Logout", logout_path,class: "btn", method: :delete %>
 
 </div>

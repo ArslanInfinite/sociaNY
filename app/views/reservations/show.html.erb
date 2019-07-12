@@ -1,11 +1,9 @@
-<h1>  My Reservations </h1>
+<header><h1>  My Reservations </h1>
+</header>
+<h3> Reservation Confirmed  </h3>
 
-<h3> Reservation Confirmation  </h3>
-Location: <%= @reservation.location %> <br>
-Activity Capacity: <%= @reservation.capacity %> <br>
-Cost: <%= @reservation.price %> <br>
-Datetime & Time: <%= @reservation.datetime %> <br>
+
 ------------------------------------------- <br>
-Your ID: <%= link_to @reservation.user_id, user_path(@user) %> <br>
-Activity ID: <%= link_to @reservation.activity_id, activity_path(@activity)%>
+User Profile: <%= link_to @reservation.user_id, user_path(@user) %> <br>
+Activity Page: <%= link_to @reservation.activity_id, activity_path(@activity)%>
 <%= button_to "Cancel Reservation", reservation_path(@reservation), method: :delete %>

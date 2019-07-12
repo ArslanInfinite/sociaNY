@@ -1,13 +1,19 @@
-<h1> <%= @activity.title %> <br> </h1>
-<br>
-<br>
+<header> <h1> <%= @activity.title %>  </h1> </header>
+<body>
 Description: <%= @activity.description %> <br>
 
 Location: <%= @activity.location %> <br>
 Capacity: <%= @activity.capacity %> <br>
-Price:    <%= @activity.price %>
+Price:    <%= @activity.price %> <br>
+-----------------------------------
 <br>
+Reviews:<% @activity.reviews.each do |review| %>
+<%= review.content %> <br>
+<%end %>
 
-<%= button_to "See Reviews", review_path(@review), method: :get%>
+<br>
+</body>
 
-<%= button_to "Write a Review", new_review_path, method: :get%>
+<%= button_to "See Reviews", review_path(@review), class: "btn", method: :get%>
+
+<%= button_to "Write a Review", new_review_path,class: "btn", method: :get%>

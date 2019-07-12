@@ -1,19 +1,17 @@
-<h1>Book New Reservation</h1>
+<header> <h1>Book New Reservation</h1> </header>
 
 <div class ="new_activity">
   <%= @message %>
 <%= form_for @reservation do |f| %>
-<%= f.label :location %>
-<%= f.text_field :location %> <br>
-<%= f.label :activity_id %>
-<%= f.collection_select :activity_id, Activity.all, :id, :title, prompt: true%> <br>
-<%= f.label :capacity %>
-<%= f.number_field :capacity %> <br>
-<%= f.hidden_field :price, :value =>  reservation[:price] %>
-<%= f.label :datetime %>
-<%= f.text_field :datetime %> <br>
-<%= f.hidden_field :user_id, :value => session[:user_id] %>
+<%= f.hidden_field :location, :value =>  :location %>
 
-<%= f.submit "Confirm Reservation" %>
+<%= f.collection_select :activity_id, Activity.all, :id, :title, prompt: "Select Activity"%>
+<%= f.hidden_field :capacity, :value => :capacity %> <br>
+<%= f.hidden_field :price, :value =>  :price %>
+<%= f.hidden_field :datetime, :value =>  :datetime %>
+<%= f.hidden_field :user_id, :value => session[:user_id] %>
+<br>
+<br>
+<%= f.submit "Confirm Reservation", class: "btn" %>
 <% end %>
 </div>
