@@ -1,6 +1,6 @@
 <header><h1>Activities</h1> </header>
-<body>
-<% @activities.each do |activity| %>
-<%= link_to activity.title, activity_path(activity) %> <br>
-<%end %>
+<body><% @reservations.each do |res| %>
+  <%= res.activity.title %> <br>
+  <%end %>
+
 </body>

@@ -31,7 +31,7 @@ class UsersController < ApplicationController
 
   def user_activities
     @user = User.find(params[:id])
-    @activities = @user.activities
+    @reservations = @user.reservations
   end
 
   def welcome

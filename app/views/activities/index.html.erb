@@ -12,20 +12,17 @@
   <div class="four wide column">
     <div class="ui card">
   <div class="image">
-    <img src="https://images4.alphacoders.com/832/832800.jpg">
+    <%imageName = activity.title.split(" ").join() + ".jpg"%>
+    <%= image_tag imageName%>
   </div>
   <div class="content">
     <a class="header">
       <%= link_to activity.title, activity_path(activity)%></a>
-    <div class="meta">
-      <span class="date">
-        #can add text here
-      </span>
-    </div>
-`     #can add description here
+    <br>
+     <%= activity.description %>
   </div>
 
-    <%= button_to "Book Reservation", new_reservation_path, method: :get %>
+    <%= button_to "Book Reservation", new_reservation_path, class: "btn", method: :get %>
 
 </div>
   </div>
