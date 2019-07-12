@@ -21,7 +21,8 @@ Rails.application.routes.draw do
 
   resources :users
 
-  resources :reviews, only: [:new, :create, ]
+  get '/reviews/new/:activity_id', to: 'reviews#new', as: 'new_review'
+  resources :reviews, only: [:create ]
 
 
 

@@ -10,16 +10,11 @@ class ReviewsController < ApplicationController
   end
 
   def new
-
-    @activity = User.find(session[:user_id]).activities.ids
-
-    # @activity = User.find(session[:user]).activities
+    @activity = Activity.find(params[:activity_id])
     @review = Review.new
   end
 
   def create
-
-
     Review.create(review_params)
     # flash[:notice] = "Thanks for leaving a review!!"
     redirect_to mainpage_path

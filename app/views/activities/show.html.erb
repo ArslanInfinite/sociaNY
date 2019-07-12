@@ -7,13 +7,12 @@ Capacity: <%= @activity.capacity %> <br>
 Price:    <%= @activity.price %> <br>
 -----------------------------------
 <br>
-Reviews:<% @activity.reviews.each do |review| %>
-<%= review.content %> <br>
+Reviews: <br>
+<% @activity.reviews.each do |review| %>
+Rating: <%= review.rating %> & Content:<%=review.content %><br>
 <%end %>
-
 <br>
 </body>
 
-<%= button_to "See Reviews", review_path(@review), class: "btn", method: :get%>
 
-<%= button_to "Write a Review", new_review_path,class: "btn", method: :get%>
+<%= button_to "Write a Review", new_review_path(@activity.id),class: "btn", method: :get%>

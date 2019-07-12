@@ -1,19 +1,10 @@
 <header>
-  <style>
-
-  h1 {
-    font-family: 'Helvetica';
-    color: #FFFFFF;
-    font-size: 50px;
-  }
-
-  </style>
   <h1>Select an activity</h1>
 </header>
 <h3><%if flash[:notice]%>
 <%=flash[:notice]%>
 <%end%></h3>
-
+<body>
 
 
 <div class="ui grid">
@@ -24,20 +15,23 @@
     <img src="https://images4.alphacoders.com/832/832800.jpg">
   </div>
   <div class="content">
-    <a class="header"><%= link_to activity.title, activity_path(activity)%></a>
+    <a class="header">
+      <%= link_to activity.title, activity_path(activity)%></a>
     <div class="meta">
       <span class="date">
         #can add text here
       </span>
     </div>
-    <div class="description">
+
 `     #can add description here
-    </div>
+
   </div>
-  <div class="extra content">
+
     <%= button_to "Book Reservation", new_reservation_path, method: :get %>
-  </div>
+
 </div>
   </div>
   <%end %>
 </div>
+
+</body>
