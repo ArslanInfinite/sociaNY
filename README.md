@@ -1,6 +1,6 @@
 # README
 
-[![Watch the video](sociaNY screenshot.jpg.png)](sociaNY demo)
+[![Watch the video](sociaNY screenshot.jpg.png)](https://drive.google.com/file/d/1UhAT0KWrjw_R--3yPUpHsIm7W90zNegZ/view?usp=sharing)
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
