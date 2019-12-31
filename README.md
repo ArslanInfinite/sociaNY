@@ -1,5 +1,7 @@
 # README
 
+[![Watch the video](sociaNY screenshot.jpg.png)](sociaNY demo)
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
